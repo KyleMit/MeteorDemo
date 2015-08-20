@@ -8,3 +8,10 @@ if (Meteor.isServer) {
 	  );
 	}	
 }
+
+
+Meteor.methods({
+	'insertQuestion': function(q) {
+		Questions.insert(q)
+	}
+})

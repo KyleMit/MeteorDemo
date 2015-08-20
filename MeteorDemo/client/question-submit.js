@@ -7,10 +7,12 @@ Template.question_submit.events({
 		var txt = ev.target.question.value;
 
 		// insert into database
-		Questions.insert({
+		var q = {
 			text: txt,
 			author: Meteor.user().username
-		});
+		}
+
+		Meteor.call('insertQuestion',q)
 
 		// clean up after ourselves
 		ev.target.question.value = "";
