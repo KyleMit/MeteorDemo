@@ -5,6 +5,10 @@
 <body>
 	<h1>Meteor Demo App</h1>
 	{{> loginButtons}}
-	{{> question_submit}}
+
+	{{#if currentUser}}
+		{{> question_submit}}
+	{{/if}}
+	
 	{{> question_list}}
 </body>
